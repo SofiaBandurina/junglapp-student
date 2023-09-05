@@ -9,27 +9,27 @@ public class EventProducer {
             int eventNumber = (int) (Math.random() * 100);
             if (eventNumber >= 0 && eventNumber < 19) {
                 sleepEvent(shark);
-            } else if (eventNumber >= 19 && eventNumber <28) {
+            } else if (eventNumber >= 19 && eventNumber < 28) {
                 swim(shark);
             } else if (eventNumber >= 28 && eventNumber < 37) {
                 eatFish(shark);
             } else if (eventNumber >= 37 && eventNumber < 46) {
                 eatSeaTurtle(shark);
-            } else if (eventNumber >= 46 && eventNumber <55) {
+            } else if (eventNumber >= 46 && eventNumber < 55) {
                 eatBlowfish(shark);
-            } else if (eventNumber >= 55 && eventNumber <64) {
+            } else if (eventNumber >= 55 && eventNumber < 64) {
                 attackKillerWhale(shark);
-            } else if (eventNumber >= 64 && eventNumber <73) {
+            } else if (eventNumber >= 64 && eventNumber < 73) {
                 winOtherShark(shark);
-            } else if (eventNumber >= 73 && eventNumber <82) {
+            } else if (eventNumber >= 73 && eventNumber < 82) {
                 loseOtherShark(shark);
-            } else if (eventNumber >= 82 && eventNumber <91) {
+            } else if (eventNumber >= 82 && eventNumber < 91) {
                 eatPlankton(shark);
-            } else if (eventNumber >= 91 && eventNumber <100) {
+            } else if (eventNumber >= 91 && eventNumber < 100) {
                 attackSwordfish(shark);
             }
             try {
-                Thread.sleep (1500);
+                Thread.sleep(1500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -191,11 +191,7 @@ public class EventProducer {
 
     private boolean checkStatus(Shark shark) {
         System.out.println("hp: " + shark.getHealth() + " energy: " + shark.getEnergy());
-        if (shark.getHealth() <= 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(shark.getHealth() <= 0);
     }
 
     private void checkEnergy(Shark shark) {
